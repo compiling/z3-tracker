@@ -7,6 +7,7 @@ import typing
 from ..config import CONFIG
 from ..dungeons import lists as dungeonlists
 from .. import entrances
+from .. import maps
 from .. import ruleset
 
 __all__ = 'Tracker',
@@ -72,6 +73,7 @@ class Tracker(object):
         items: item inventory
         dungeons: dungeon state
         maps: {'light', 'dark'} world map displays
+        locationtracker: location tracker
         ruleset: location rules
         settings: game settings
         startpoint: starting locations
@@ -84,6 +86,7 @@ class Tracker(object):
         self.items = {}
         self.dungeons = {}
         self.maps = {'light': None, 'dark': None}
+        self.locationtracker = maps.LocationTracker()
         self.entrances = entrances.EntranceTracker(self)
         self.crystals = {'tower': -1, 'ganon': -1}
         self.keys = {}
@@ -192,6 +195,7 @@ class Tracker(object):
 
         assert maptype in ('light', 'dark')
         self.maps[maptype] = mapdisplay
+        self.maps[maptype].add_location_tracker(self.locationtracker)
         if all(m is not None for m in self.maps.values()):
             self.maps['light'].other = self.maps['dark']
             self.maps['dark'].other = self.maps['light']

@@ -23,7 +23,7 @@ LOCATIONS= {
                 ('pendant', 'wisdom'),
                 ('or', [
                     ('settings', 'placement_advanced'), ('item', 'mudora')])])],
-            'Mushroom': [],
+            'Mushroom': [('rabbitbarrier', None)],
             "Thief's Cave Drop Entrance (E)": [('rabbitbarrier', None)],
             "Thief's Cave Entrance Entrance (E)": [],
             'Northern Chest Game Entrance (E)': []},
@@ -38,7 +38,7 @@ LOCATIONS= {
     'Mushroom': {
         'type': 'item', 'map': 'light', 'coord': (79, 57),
         'link': {
-            'Lost Woods': []}
+            'Lost Woods': [('rabbitbarrier', None)]}
     },
     "Thief's Cave Drop Entrance (E)": {
         'type': 'entrance_drop', 'map': 'light', 'coord': (125, 84),

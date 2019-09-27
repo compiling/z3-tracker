@@ -142,7 +142,8 @@ LOCATIONS = {
             'King Zora': [],
             'Zora River Viewpoint': [
                 ('item', 'flippers'),
-                ('glitch', 'overworld'), ('item', 'pegasus')]},
+                ('and', [
+                    ('glitch', 'overworld'), ('item', 'pegasus')])]},
         'visible': {'Zora River Viewpoint': []}
     },
     'Waterfall Lake': {

@@ -13,7 +13,6 @@ LOCATIONS = {
                 ('nosettings', 'inverted'), ('item', 'mirror')])],
             'Witch Hut River': [('and', [
                 ('nosettings', 'inverted'), ('item', 'mirror')])],
-            'North Dark World': [],
             'River Shop Area': [],
             'Dark World Waterway': []}
     },

@@ -135,7 +135,7 @@ LOCATIONS = {
         'type': 'dungeonchest', 'dungeon': 'Castle Dungeons',
         'link': {
             'Zelda': [],
-            'Castle Dungeons': []}
+            'Castle Dungeons': [('rabbitbarrier', None)]}
     },
 
     'Secret Escape': {
@@ -333,6 +333,9 @@ LOCATIONS = {
     'Castle Tower Reward': {
         'type': 'area', 'dungeon': 'Castle Tower',
         'link': {
-            'Pyramid': [('state', 'rabbit')]}
+            'Pyramid': [('and', [
+                ('nosettings', 'inverted'), ('state', 'rabbit')])],
+            'Castle Walls': [('and', [
+                ('settings', 'inverted'), ('state', 'rabbit')])]}
     },
 }

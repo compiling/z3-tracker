@@ -25,9 +25,12 @@ LOCATIONS = {
                         ('item', 'pearl'), ('item', 'hammer')])]),
                 ('glitch', 'major')],
             'East Dark World': [('and', [
-                ('glitch', 'world'), ('item', 'mirror'), ('item', 'pegasus'),
+                ('glitch', 'overworld'),
+                ('item', 'mirror'),
+                ('item', 'pegasus'),
                 ('or', [
-                    ('item', 'sword'), ('item', 'hookshot')])])]}
+                    ('item', 'sword'),
+                    ('item', 'hookshot')])])]}
     },
     'West Death Mountain Fairy Entrance (E)': {
         'type': 'entrance', 'map': 'dark', 'coord': (264, 125),

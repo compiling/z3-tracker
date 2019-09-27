@@ -12,7 +12,6 @@ from ..config.images import image
 common = importlib.import_module(
     '..gui-common.maps', package=__package__)
 BUTTONTYPE = common.BUTTONTYPE
-from .. import maps
 
 from . import misc
 
@@ -52,7 +51,7 @@ class MapDisplay(tk.Toplevel):
         self.entrancetracker = None
         self.other = None
         self.activelink = set()
-        self.tracker = maps.LocationTracker()
+        self.tracker = None
 
         # Set up bottom text label.
         self.helpertext = tk.StringVar()
@@ -84,6 +83,16 @@ class MapDisplay(tk.Toplevel):
             (0, 0), anchor=tk.NW, image=imagefile)
         self.map.bind('<ButtonRelease-3>', lambda _: self._rightclick_button())
         self.imagefile = imagefile
+
+    def add_location_tracker(self, locationtracker) -> None:
+        '''
+        Add location tracker.
+
+        Args:
+            locationtracker: location tracker
+        '''
+
+        self.tracker = locationtracker
 
     def place_buttons(self, locations: dict) -> None:
         '''
@@ -474,7 +483,7 @@ class MapDisplay(tk.Toplevel):
         self.set_entrance()
         for button in self.button:
             if self.button[button]['type'] == 'dungeon':
-                self.tracker[button] = (True, True)
+                self.tracker[button] = [True, True]
             else:
                 self.tracker[button] = True
             self._set_colour(button)
